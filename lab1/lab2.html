@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        ShrinkWrap vs Slivers. Tối ưu performance cho các Scroll Layout
+    </title>
+    <link rel="shortcut icon" href="https://techmaster.vn/resources/image/favicon.ico" type="image/x-icon" />
+</head>
+
+<body>
+    <div>
+        <h1>ShrinkWrap vs Slivers. Tối ưu performance cho các Scroll Layout</h1>
+        <p>26 tháng 08, 2022 - 90 lượt xem</p>
+        <h3>Bài viết liên quan</h3>
+        <ul>
+            <li>
+                <a href="./lab1.html">Cơ hội việc làm nào cho Lập trình viên PHP. Mức lương là bao nhiêu?</a>
+            </li>
+            <li>
+                <a href="./lab3.html">Thông báo tuyển sinh lớp Lộ trình Java Spring Boot 15 - ngày 30/8/2022</a>
+            </li>
+            <li>
+                <a href="./lab4.html">Phân tích nghiệp vụ: Action - Event - Status</a>
+            </li>
+        </ul>
+        <hr />
+    </div>
+
+
+    <div>
+        <img src="https://media.techmaster.vn/api/static/T5Ta-pfP/S4tMsvyg" alt="." />
+
+        <h2>Sơ qua về Listview.</h2>
+
+        <p>
+            Để các bạn hiểu hơn về ý chính của bài viết là ShrinkWrap và Slivers thì
+            chúng ta cùng tìm hiểu qua về Listview, những sai lầm phổ biến về
+            Listview.
+            <br />
+            Listview là một Widget chứa danh sách các Widget khác, đồng thời nó giúp
+            các Widget con có thể cuộn theo chiều ngang hoặc chiều dọc.
+        </p>
+
+        <h4>Listview vs Listview.builder</h4>
+
+        <p>
+            <img src="https://media.techmaster.vn/api/static/T5Ta-pfP/38SyxYPW" alt="." />
+        </p>
+
+        <h4>ListView</h4>
+
+        <p>
+            <em>Ưu điểm:</em> Linh hoạt đối với số lượng Widget con ít, các Widget
+            con có nhiều type khác nhau (Container, Textfield, Image, Button,…)
+        </p>
+
+        <p>
+            <em>Nhược điểm:</em> Render tất cả item trong danh sách widget con,
+            không có cơ chế cache những item con bị ẩn, không được nhìn thấy trên
+            màn hình.
+        </p>
+
+        <p>
+            <em>This constructor is appropriate for list views with a small number of
+                children because constructing the List requires doing work for every
+                child that could possibly be displayed in the list view instead of
+                just those children that are actually visible.</em>
+            <br />
+            <a href="https://api.flutter.dev/flutter/widgets/ListView/ListView.html">https://api.flutter.dev/flutter/widgets/ListView/ListView.html
+            </a>
+        </p>
+
+        <h4>ListView.builder</h4>
+
+        <p><em>Ưu điểm:</em> Tối ưu tài nguyên cho hệ thống tốt, chỉ build và render những item được nhìn thấy trên
+            màn
+            hình. Cuộn tới đâu render tới đó, không render một cục như Listview</p>
+
+        <p><em>Nhược điểm:</em> Chỉ được dùng trong trường hợp các danh sách con cùng loại.</p>
+
+        <p>
+            <em>This constructor is appropriate for list views with a large (or infinite) number of children because
+                the
+                builder is called only for those children that are actually visible.</em>
+            <br>
+            <a
+                href="https://api.flutter.dev/flutter/widgets/ListView/ListView.builder.html">https://api.flutter.dev/flutter/widgets/ListView/ListView.builder.html</a>
+        </p>
+
+        <h4>ListViews in ListView</h4>
+
+        <p>Trong thực tế chúng ta thường gặp trường hợp phải lồng các listview vào nhau. Giải pháp của chúng ta là
+            set
+            <em>shrinkWrap: true</em> và <em>physics: const NeverScrollableScrollPhysics()</em>
+            cho các Listview con. Việc này có thể giúp chúng ta giải quyết vấn đề nhưng vô hình chung chúng ta đã
+            phá vỡ
+            cơ chế tối ưu của Listview.builder,
+            đó là chúng chỉ render những item được nhìn thấy trên màn hình.
+        </p>
+
+        <p>Mình chứng cho việc này, chúng ta cùng xem ví dụ sau:
+            <br>
+            <a href="https://dartpad.dev/?id=d3e4dfbb688560be3b22baa941e176a6">
+                https://dartpad.dev/?id=d3e4dfbb688560be3b22baa941e176a6
+            </a>
+            <br>
+            Hãy run đoạn code ví dụ kết hợp scroll và xem log để thấy tôi nói có đúng không nhé ae. Vừa run code,
+            tất cả
+            các item
+            trong Listview con đều được build, thật là kinh khủng và không chấp nhận được đối với một developer.
+        </p>
+
+        <p>Trong thực tế, đặc biệt là chúng ta có một Listview con trong 1 listview chứ số lượng lớn các item, sẽ
+            gây
+            nên tình
+            trạng tốn tài nguyên, giật lag nếu chiếm quá nhiều ram. Điều này thật tệ và không chấp nhận được đối với
+            một
+            sản phẩm.
+            Vậy thì giải pháp là gì, chúng ta cùng đi tìm hiểu tiếp nhé
+        </p>
+
+        <h4>Slivers + CustomScrollView</h4>
+
+        <p><img src="https://media.techmaster.vn/api/static/T5Ta-pfP/XIz4kArL" alt="."></p>
+
+        <p>Thật may, team Flutter đã tạo ra cho chúng ta một giải pháp, đó là sử dụng Slivers kết hợp với
+            CustomScollView.
+            <br>
+            Hãy cùng xem qua ví dụ, scroll + xem log để cảm nhận và thầm cảm ơn team Flutter nhé :D.
+            <br>
+            <a
+                href="https://dartpad.dev/?id=ae50a3adb0dac1c9138308a3b12930d3">https://dartpad.dev/?id=ae50a3adb0dac1c9138308a3b12930d3</a>
+            <br>
+            Ae chạy code và xem log rồi thì chắc tôi cũng không cần giải thích dài dòng nữa đúng không. Đại loại bộ
+            đôi
+            này sẽ giải quyết cho ae bài toàn có 2 danh sách cuộn lồng nhau.
+        </p>
+
+        <p>Vậy thì sẽ có ae thắc mắc trong thực tế có khi nào xảy ra tình huống này hay không. Câu trả lời là có,
+            hãy ví
+            dụ trang
+            chủ của một app thương mại điện tử, từ trên xuống là một danh sách các banner quảng cáo, header, danh
+            sách
+            sản phẩm cuộn
+            ngang… và dưới cùng là một danh sách sản phẩm dài vô tận, lướt muốn bở hơi tai. Khi user cuộn càng ngày
+            càng
+            nhiều sản
+            phẩm, nếu không có cơ chế giải phóng bộ nhớ cho danh sách các item đó thì ram càng ngày càng bị đầy và
+            tất
+            nhiên app sẽ
+            càng bị giật lag.
+        </p>
+    </div>
+
+    <div>
+        <h2>Kết bài</h2>
+        <p><img src="https://media.techmaster.vn/api/static/T5Ta-pfP/szdAvx5Z" alt="."></p>
+        <p>Như vậy qua bài viết này có thể giúp anh em tự tin khi đối mặt với các tình huống tương tự. Anh em có ý kiến
+            hay đóng góp gì cho tác giả vui lòng cmt phía dưới nhé. Chúc ae coding vui vẻ hehe.
+        </p>
+    </div>
+</body>
+
+</html>
