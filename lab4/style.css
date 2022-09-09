@@ -342,6 +342,7 @@ a {
 .more p {
   left: 0;
   right: 0;
+  cursor: pointer;
   font-size: 0.8rem;
   padding: 6px 18px;
   border-radius: 3px;
