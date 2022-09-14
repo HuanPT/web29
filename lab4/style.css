@@ -216,6 +216,10 @@ img {
   background-color: #eee;
 }
 
+.navbar-info:hover .icon-right {
+  color: #0d0d0d;
+}
+
 .navbar-user .icon-right {
   color: #fff;
   box-shadow: 0 0 5px #ccc;
