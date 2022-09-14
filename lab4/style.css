@@ -164,7 +164,7 @@ img {
   position: relative;
 }
 
-.search-box .icon {
+.search-box .icon-search {
   top: 5px;
   right: 5px;
   width: 20px;
@@ -189,7 +189,7 @@ img {
   width: 100%;
 }
 
-.icon:hover {
+.icon-search:hover {
   color: #000;
 }
 
