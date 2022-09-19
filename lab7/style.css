@@ -1,0 +1,267 @@
+* {
+  background: #fff;
+  color: #1c1e21;
+  line-height: 1.34;
+  margin: 0;
+  padding: 0;
+  direction: ltr;
+  unicode-bidi: embed;
+  box-sizing: border-box;
+}
+
+.main {
+  background: #f1f1f1;
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  width: 432px;
+  margin: 24px;
+  height: 550px;
+  min-height: 100px;
+  align-self: center;
+  background: url(https://img.ixintu.com/download/jpg/202004/ebbaa8338d1a2087c634940a1bac766f_800_1200.jpg!con0)
+    center / cover no-repeat;
+  box-shadow: 0 2px 5px rgba(51, 63, 73, 0.1);
+  position: relative;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.wavy {
+  width: 100%;
+  font-size: 30px;
+  top: 100px;
+  display: block;
+  font-weight: 700;
+  position: absolute;
+  background-color: transparent;
+}
+
+.wavy-text {
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  text-transform: uppercase;
+  background-color: transparent;
+  animation: fly 1.8s linear infinite normal both;
+  animation-delay: calc(var(--i) * 0.2s);
+}
+
+@keyframes fly {
+  from {
+    transform: translateY(0);
+  }
+
+  10% {
+    transform: translateY(0);
+  }
+
+  55% {
+    transform: translateY(-150%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.heart-wrap {
+  position: relative;
+  height: 550px;
+  background: transparent;
+}
+
+.heart {
+  left: 50px;
+  top: 160px;
+  position: absolute;
+  background: transparent;
+
+  animation: heart 2s linear 0s infinite both;
+}
+
+.icon-heart {
+  z-index: 1;
+  top: 10px;
+  color: goldenrod;
+  font-size: 50px;
+  background: transparent;
+}
+
+.heart-bg {
+  position: absolute;
+
+  animation: scale 2s linear 0s infinite;
+}
+
+.heart-2 {
+  right: 60px;
+  top: 40px;
+  position: absolute;
+  background: transparent;
+
+  animation: heart 2s linear 0s infinite both;
+}
+
+.icon-heart-2 {
+  z-index: 1;
+  top: 10px;
+  color: rgb(255, 0, 0);
+  font-size: 50px;
+  background: transparent;
+}
+
+.heart-bg-2 {
+  position: absolute;
+
+  animation: scale 2s linear 0s infinite;
+}
+
+.heart-3 {
+  right: 120px;
+  bottom: 160px;
+  position: absolute;
+  background: transparent;
+
+  animation: heart 2s linear 0s infinite both;
+}
+
+.icon-heart-3 {
+  z-index: 1;
+  top: 10px;
+  color: #31fad4;
+  font-size: 50px;
+  background: transparent;
+}
+
+.heart-bg-3 {
+  position: absolute;
+
+  animation: scale 2s linear 0s infinite;
+}
+
+@keyframes heart {
+  from {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0 0 0 / 0%);
+  }
+
+  40% {
+    transform: scale(1.4);
+    text-shadow: 0 10px 25px rgba(0 0 0 / 30%);
+  }
+
+  50% {
+    transform: scale(1.5);
+    text-shadow: 0 10px 25px rgba(0 0 0 / 30%);
+  }
+
+  60% {
+    transform: scale(1.4);
+    text-shadow: 0 10px 25px rgba(0 0 0 / 30%);
+  }
+
+  80% {
+    text-shadow: none;
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  80% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0.1;
+  }
+}
+
+.snow_wrap {
+  z-index: 5;
+  top: 0;
+  width: 100%;
+  height: 550px;
+  font-size: 30px;
+  display: block;
+  font-weight: 700;
+  position: absolute;
+  background: transparent;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.snow,
+.snow:before,
+.snow:after {
+  position: absolute;
+  top: -560px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+  background-image: radial-gradient(4px 4px at 100px 50px, #fff, transparent),
+    radial-gradient(6px 6px at 200px 150px, #fff, transparent),
+    radial-gradient(3px 3px at 300px 250px, #fff 50%, transparent),
+    radial-gradient(4px 4px at 400px 350px, #fff 50%, transparent),
+    radial-gradient(6px 6px at 500px 100px, #fff 50%, transparent),
+    radial-gradient(3px 3px at 50px 200px, #fff 50%, transparent),
+    radial-gradient(4px 4px at 150px 300px, #fff 50%, transparent),
+    radial-gradient(6px 6px at 250px 400px, #fff 50%, transparent),
+    radial-gradient(3px 3px at 350px 500px, #fff 50%, transparent);
+  background-size: 650px 650px;
+  animation: snow 5s linear infinite;
+  content: "";
+}
+
+.snow:after {
+  margin-left: -150px;
+  opacity: 0.8;
+  filter: blur(2px);
+  animation-duration: 6s;
+  animation-direction: inherit;
+}
+
+.snow:before {
+  margin-left: 150px;
+  opacity: 0.6;
+  filter: blur(1px);
+  animation-duration: 9s;
+  animation-direction: inherit;
+}
+
+@keyframes snow {
+  from {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(550px);
+    opacity: 0;
+  }
+}
+
+.text-new-year {
+  width: 100%;
+  font-size: 16px;
+  line-height: 20px;
+  bottom: 222px;
+  display: block;
+  font-weight: 300;
+  position: absolute;
+  background-color: transparent;
+}
+
+.text {
+  background-color: transparent;
+}
