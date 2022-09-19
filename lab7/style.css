@@ -10,9 +10,13 @@
 }
 
 .main {
-  background: #f1f1f1;
+  background: #e36b6b;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  flex-direction: column;
+  padding-bottom: 64px;
 }
 
 .form {
@@ -83,8 +87,8 @@
 
 .icon-heart {
   z-index: 1;
+  color: #31fad4;
   top: 10px;
-  color: goldenrod;
   font-size: 50px;
   background: transparent;
 }
@@ -119,8 +123,8 @@
 }
 
 .heart-3 {
-  right: 120px;
-  bottom: 160px;
+  right: 140px;
+  bottom: 230px;
   position: absolute;
   background: transparent;
 
@@ -130,8 +134,8 @@
 .icon-heart-3 {
   z-index: 1;
   top: 10px;
-  color: #31fad4;
   font-size: 50px;
+  color: goldenrod;
   background: transparent;
 }
 
@@ -263,5 +267,13 @@
 }
 
 .text {
+  background-color: transparent;
+}
+
+audio {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  align-self: center;
   background-color: transparent;
 }
