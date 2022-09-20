@@ -107,8 +107,7 @@ li:hover {
 
 .main-img {
   padding-top: 50%;
-  background: url(http://unvab.com/snow-free-html/assets/images/post-6.jpg)
-    center / cover no-repeat;
+  background: url(./img/post-6.jpg) center / cover no-repeat;
 }
 
 .content-section {
