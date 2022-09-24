@@ -103,7 +103,7 @@
 
 ### Hàm - Function
 
-Là các câu lệnh, được bọc trong khối mã và gán cho một tên biến Cho phép tái sử dụng mã nhiều lần, nhiều nơi trong trương trình.
+Là các câu lệnh, được bọc trong khối mã và gán cho một tên biến Cho phép tái sử dụng mã nhiều lần, nhiều nơi trong chương trình.
 
 **function** có thể nhận các gía trị đầu vào **- input -** và thay đổi cách nó hoạt động dựa trên giá trị đó, mỗi **function** có thể nhận số lượng giá trị đầu vào bất kỳ.
 
