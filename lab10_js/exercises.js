@@ -12,12 +12,14 @@ function maxOfThree(a, b, c) {
     return a;
   } else if (b > a && b > c) {
     return b;
-  } else {
+  } else if (c > a && c > b) {
     return c;
+  } else {
+    return "có 2 hoặc 3 số lớn nhất!";
   }
 }
 
-// console.log("so lon nhat trong 3 so 4,3,5 la ", maxOfThree(4, 3, 5));
+console.log("so lon nhat trong 3 so 4,4,3 la ", maxOfThree(4, 4, 3));
 
 /**
  * Tìm mùa tương ứng với tháng
@@ -93,14 +95,14 @@ function findDayOfMonth(month, year) {
     month == 10 ||
     month == 12
   ) {
-    return " có 31 ngày";
+    return 31;
   } else if (month == 4 || month == 6 || month == 9 || month == 11) {
-    return " có 30 ngày";
+    return 30;
   } else if (month == 2) {
     if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-      return " có 29 ngày";
+      return 29;
     }
-    return " có 28 ngày";
+    return 28;
   } else {
     return "không biết";
   }
@@ -122,19 +124,19 @@ function findDayOfMonth(month, year) {
  * @return {'A' | 'B' | 'C' | 'D' | 'F'} Xếp hạng tốt nghiệp của sinh viên
  */
 function calcGrade(point) {
-  if (8.5 <= point <= 10) {
-    return "A";
-  } else if (point < 8.5) {
-    return "B";
-  } else if (point < 7.0) {
-    return "C";
+  if (point < 4) {
+    return "F";
   } else if (point < 5.5) {
     return "D";
-  } else if (point < 4.0) {
-    return "F";
+  } else if (point < 7) {
+    return "C";
+  } else if (point < 8.5) {
+    return "B";
+  } else if (8.5 <= point <= 10) {
+    return "A";
   }
 }
-// console.log("điểm trung bình 7 xếp loại:", calcGrade(7));
+console.log("điểm trung bình 7 xếp loại:", calcGrade(7));
 /**
  * Tính tiền cước taxi cho khách theo số kilomet đã di chuyển
  *
@@ -148,14 +150,16 @@ function calcGrade(point) {
  * @return {number} Số tiền phải trả
  */
 function calcTaxiFee(km) {
-  if (km <= 30) {
+  if (km < 0) {
+    return "chua dc cuoc nao";
+  } else if (km <= 30) {
     return 10000 + 11000 * km;
   } else {
     return 10000 + 330000 + (km - 30) * 9500;
   }
 }
 
-console.log("Tổng tiền cước cho 40km là:", calcTaxiFee(40));
+console.log("Tổng tiền cước cho -40km là:", calcTaxiFee(-40));
 
 /**
  * Tìm nghiệm phương trình bậc 2 ax^2 + bx + c = 0
@@ -192,4 +196,7 @@ function solveEquation(a, b, c) {
   return "không phải ptbh";
 }
 
-console.log("nghiệm của ptbh a = 1, b = 2, c = 1 là:", solveEquation(1, 2, 1));
+console.log(
+  "nghiệm của ptbh a = 1, b = -2, c = 3 là:",
+  solveEquation(1, 2, -2)
+);
