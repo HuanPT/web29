@@ -8,15 +8,20 @@
  * @return {number} Số lớn nhất trong 3 số
  */
 function maxOfThree(a, b, c) {
-  if (a > b && a > c) {
-    return a;
-  } else if (b > a && b > c) {
-    return b;
-  } else if (c > a && c > b) {
-    return c;
-  } else {
-    return "có 2 hoặc 3 số lớn nhất!";
-  }
+  let max = a;
+  if (b > max) max = b;
+  if (c > max) max = c;
+  return max;
+
+  // if (a > b && a > c) {
+  //   return a;
+  // } else if (b > a && b > c) {
+  //   return b;
+  // } else if (c > a && c > b) {
+  //   return c;
+  // } else {
+  //   return "có 2 hoặc 3 số lớn nhất!";
+  // }
 }
 
 console.log("so lon nhat trong 3 so 4,4,3 la ", maxOfThree(4, 4, 3));
@@ -34,17 +39,42 @@ console.log("so lon nhat trong 3 so 4,4,3 la ", maxOfThree(4, 4, 3));
  * @return {'Winter' | 'Spring' | 'Summer' | 'Fall'} Mùa tương ứng với tháng
  */
 function findSeason(month) {
-  if (month == 12 || month == 1 || month == 2) {
-    return "Winter";
-  } else if (month == 3 || month == 4 || month == 5) {
-    return "Spring";
-  } else if (month == 6 || month == 7 || month == 8) {
-    return "Summer";
-  } else if (month == 9 || month == 10 || month == 11) {
-    return "Fall";
-  } else {
-    return "chịu";
+  switch (month) {
+    case 12:
+    case 1:
+    case 2:
+      return "Winter"; // sử dụng return nên k cần break;
+
+    case 3:
+    case 4:
+    case 5:
+      return "Spring";
+
+    case 6:
+    case 7:
+    case 8:
+      return "Summer";
+
+    case 9:
+    case 10:
+    case 11:
+      return "Fall";
+
+    default:
+      return null;
   }
+
+  // if (month == 12 || month == 1 || month == 2) {
+  //   return "Winter";
+  // } else if (month == 3 || month == 4 || month == 5) {
+  //   return "Spring";
+  // } else if (month == 6 || month == 7 || month == 8) {
+  //   return "Summer";
+  // } else if (month == 9 || month == 10 || month == 11) {
+  //   return "Fall";
+  // } else {
+  //   return "chịu";
+  // }
 }
 
 // console.log("Tháng 5 là mùa: ", findSeason(5));
@@ -64,11 +94,13 @@ function findSeason(month) {
  * @return {boolean} Năm này có phải năm nhuận hay không
  */
 function isLeafYear(year) {
-  if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-    return true;
-  } else {
-    return false;
-  }
+  return year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0);
+
+  // if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+  //   return true;
+  // } else {
+  //   return false;
+  // }
 }
 
 // console.log("nam nay 2022 co phai nam nhuan khong", isLeafYear(2022));
@@ -86,26 +118,51 @@ function isLeafYear(year) {
  * @return {number} Số ngày trong tháng đó
  */
 function findDayOfMonth(month, year) {
-  if (
-    month == 1 ||
-    month == 3 ||
-    month == 5 ||
-    month == 7 ||
-    month == 8 ||
-    month == 10 ||
-    month == 12
-  ) {
-    return 31;
-  } else if (month == 4 || month == 6 || month == 9 || month == 11) {
-    return 30;
-  } else if (month == 2) {
-    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
-      return 29;
+  switch (month) {
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:
+      return 31;
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+      return 30;
+
+    case 2: {
+      // if (isLeafYear(year)) return 29;
+      // else return 28;
+      return isLeafYear(year) ? 29 : 28;
     }
-    return 28;
-  } else {
-    return "không biết";
+
+    default:
+      break;
   }
+
+  // if (
+  //   month == 1 ||
+  //   month == 3 ||
+  //   month == 5 ||
+  //   month == 7 ||
+  //   month == 8 ||
+  //   month == 10 ||
+  //   month == 12
+  // ) {
+  //   return 31;
+  // } else if (month == 4 || month == 6 || month == 9 || month == 11) {
+  //   return 30;
+  // } else if (month == 2) {
+  //   if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+  //     return 29;
+  //   }
+  //   return 28;
+  // } else {
+  //   return "không biết";
+  // }
 }
 
 // console.log("thang 2 co bao nhieu ngay: ", findDayOfMonth(2, 2000));
@@ -134,7 +191,7 @@ function calcGrade(point) {
     return "B";
   } else if (8.5 <= point <= 10) {
     return "A";
-  }
+  } else return NaN;
 }
 console.log("điểm trung bình 7 xếp loại:", calcGrade(7));
 /**
@@ -150,8 +207,8 @@ console.log("điểm trung bình 7 xếp loại:", calcGrade(7));
  * @return {number} Số tiền phải trả
  */
 function calcTaxiFee(km) {
-  if (km < 0) {
-    return "chua dc cuoc nao";
+  if (km <= 0) {
+    return undefined;
   } else if (km <= 30) {
     return 10000 + 11000 * km;
   } else {
