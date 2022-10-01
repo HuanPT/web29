@@ -123,4 +123,176 @@ Là các câu lệnh, được bọc trong khối mã và gán cho một tên bi
 - Ngược lại, các biến khai báo bên ngoài các **function** (hoặc khối code) được gọi là **biến global** - có thể truy cập ở mọi nơi.
 - Thông thường, nên tránh truy cập trực tiếp tới giá trị của một biến bên ngoài hàm, thay vào đó nên sử dụng **tham số - Paramenters** và **đối số - arguments**
 
-####
+## Opearator in JavaScript
+
+### Toán tử trong JS đc chia thành 5 loại:
+
+1.  Arithmetic Operators - Toán tử Số học :
+
+    > \+ ;Cộng
+
+    > \- ;Trừ
+
+    > \* ;nhân
+
+    > / ;chia
+
+    > \*\* ;Lũy thừa
+
+    > % ;Phép chia lấy phần dư
+
+    > ++ ;Tăng một giá trị
+
+    > -- ;Giảm một giá trị
+
+2.  Comparision Operators - Toán tử so sánh
+
+- bất kỳ trường hợp nào so sánh vs NaN = false;
+
+  > == ; So sánh bằng theo giá trị
+
+  > === ; So sánh bằng theo cả kiểu dữ liệu và giá trị. so sánh bình đẳng nghiêm ngặt
+
+  > != ; So sánh không bằng theo giá trị
+
+  > !== ; So sánh không bằng theo cả kiểu dữ liệu và giá trị
+
+  > \> ; So sánh lớn hơn
+
+  > < ; So sánh bé hơn
+
+  > \>= ; So sánh lớn hơn hoặc bằng
+
+  > <= ; So sánh bé hơn hoặc bằng
+
+  > ? ; Toán tử ba ngôi
+
+3.  Assignment Operators - Toán tử Gán
+
+    > x = 1;
+
+    > x = x + 1;
+
+    > x += 1; // Lấy giá trị hiện tại của x + với giá trị bên phải
+
+    > x++; // Tăng giá trị hiện tại của x lên 1 và trả về kết quả trước khi tính;
+
+    > x--; // Giảm giá trị hiện tại của x đi 1 và trả về kết quả trước khi tính;
+
+    > ++x; // Tăng giá trị hiện tại của x lên 1 trả về kết quả trước khi tính toán;
+
+    > --x; // Giảm giá trị hiện tại của x đi 1 trả về kết quả trước khi tính toán;
+
+4.  Logic Operators - Toán tử logic
+
+- Đánh giá lần lượt từng giá trị(hoặc biểu thức con) xem là đúng hay sai, & trả về kết quả > And: trả về giá trị đầu tiên được đánh giá là sai(false), nếu không trả về giá trị cuối cùng. > (tìm giá trị đầu tiên trong biểu thức, hoặc cuối cùng)
+
+  > toán tử "và": && - chỉ đúng khi tất cả đều đúng. > OR: trả về giá trị đầu tiên được đánh giá là đúng(true), nếu không sẽ trả về giá trị cuối cùng.
+
+  > toán tử "hoặc": || - Chỉ sai khi tất cả đều sai.
+
+  > NOT: "Phủ định": ! - chuyển giá trị về kiểu logic đảo ngược của nó.
+
+5.  Conditional Operators - toán tử 3 ngôi
+
+- Toán tử 3 ngôi là một toán tử vô cùng hữu ích trong JavaScript, toán tử này giống như là bản rút gọn của câu lệnh if-else
+
+  > ?:
+  > condition ? value 1 : value 2  
+  > nếu condition trước dấu ? trả về true thì sẽ trả về value 1 còn false thì sẽ trả về value 2
+
+### Control Structure
+
+- Cấu trúc điều khiển là đặc trưng & là yếu tố quan trọng trong lập trình. Các cấu trúc điều khiển xác định logic cho chương trình.
+
+- Chạy các câu lệnh theo 1 thứ tự nào đó.
+
+- Bỏ qua 1 vài câu lệnh, chạy các câu lệnh khác
+
+  - các câu lệnh điều kiện: if - else; switch - case
+
+        Switch () {
+          case 1: // code
+          case 2: // code
+        }
+
+        -Từng case của nó là 1 giá trị duy nhất & cụ thể, nếu k có break thì switch sẽ chạy tất cả các case bên dưới sẽ chạy bất kể đúng hay k.
+
+  - Vòng lặp: for; do; while
+
+    - xác định tham số vòng lặp (i);
+    - điều kiện để dừng vòng lặp (i > 10);
+    - điều kiện để chạy vòng lặp (i <= 10);
+
+    - lặp đi lặp lại các câu lệnh bên trong cho đến khi điều kiện condition đc đánh giá là false;
+    - Vòng lặp while sẽ kiểm tra điều kiện trước khi chạy.
+      -Có thể khai báo nhiều tham số vòng lặp, phân tách nhau bằng dấu phẩy ","
+    - điều kiện có thể kết hợp nhiều đk với toán tử logic;
+    - bước cập nhật tham số
+
+    > for (begin; condition; step) {  
+    > // code;  
+    > }
+
+    > **Begin**: khai báo tham số vòng lặp;  
+    > **condition**: điều kiện để vòng lặp chạy (đk phải đúng)  
+    > **step**: tăng hoặc giảm giá trị của tham số vòng lặp sau mỗi lượt
+
+    > **_Lưu ý_**: Chú ý điều kiện condition, bởi vì nếu condition mà luôn đúng, thì sẽ bị vòng lặp vô tận(infinity loop);
+
+            - VD:
+              let age = 19;
+              if (age = 18) {
+                console.log("Ok, bạn được phép truy cập vào trang web");
+              } else {
+                console.log("Bạn không được phép truy cập vào trang web");
+              }
+
+              - Thực hiện các câu lệnh theo điều kiện, nếu sai thì không làm gì cả!
+
+              let isRaining = true;
+
+              if (isRaining) {
+                console.log("mặc áo mưa vào");
+              }
+
+              -Thực hiện các 2 nhóm câu lệnh theo điều kiện, đúng thì thực hiện các câu lệnh
+
+              let hasExercises = false;
+
+              if (hasExercises) {
+                console.log("lam bai");
+              } else {
+                console.log("di ngu");
+              }
+
+              - Các câu lệnh if - else có thể lồng nhau, cho phép kiểm tra các điều kiện con.
+
+              let isWeekend = false;
+              let isRelationship = true;
+
+              if (isWeekend) {
+                if (isRelationship) {
+                  console.log("ru ng yeu di choi");
+                } else {
+                  console.log("o nha di");
+                  }
+              } else {
+               console.log("hn kp cuoi tuan");
+              }
+
+               - Kiểm tra nhiều điều kiện
+               else - if
+
+              let soNamKinhNghiem = 10;
+              if (soNamKinhNghiem < 2) {
+                console.log("tra 5 tr");
+              } else if (soNamKinhNghiem < 4) {
+                console.log("tra 10 tr");
+              } else if (soNamKinhNghiem < 6) {
+                console.log("tra 15 tr");
+              } else if (soNamKinhNghiem < 10) {
+                console.log("tra 25 tr");
+              } else {
+                console.log("tra 50 tr");
+              }
