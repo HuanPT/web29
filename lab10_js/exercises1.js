@@ -56,17 +56,27 @@ console.log(sumOfPrimes(100));
 function fibonacci(n) {
   let a = 0; // bước 1;
   let b = 1; // bước 2;
-  let temp; // biến lưu bước tiếp theo;
-  if (n <= 0) return NaN;
-  while (n > 0) {
-    temp = a; // 0 1 1 2 3 5 8 // gán bước trước = a;
-    a = a + b; // 1 1 2 3 5 8 13 // bước sau = a + b;
-    b = temp; // 0 1 1 2 3 5 8 //trả về bước a trước khi a + b;
+  let c; // biến lưu bước tiếp theo;
+  // if (n <= 0) return NaN;
+  // while (n > 0) {
+  //   c = a; // 0 1 1 2 3 5 8 // gán bước trước = a;
+  //   a = a + b; // 1 1 2 3 5 8 13 // bước sau = a + b;
+  //   b = c; // 0 1 1 2 3 5 8 //trả về bước a trước khi a + b;
 
-    n--; //vòng lặp dừng khi n = 0;
-  }
+  //   n--; //vòng lặp dừng khi n = 0;
+  // }
+  // return c;
 
-  return b;
+  if (n === 1) return a;
+
+  if (n === 2) return b;
+
+  for (let i = 0; i < n - 2; i++);
+  c = a + b;
+  a = b;
+  b = c;
+
+  return c;
 }
 
 console.log(fibonacci(13));
@@ -111,7 +121,7 @@ function isStrong(n) {
     remainder = n % 10; // chia n cho 10 lấy dư;
     // console.log(remainder);
     sum += factorial(remainder); // tính giai thừa số dư
-    n = Math.floor(n / 10); // lấy ra số nguyên khi n / 10; nếu n là số nguyên < 10; thì vòng lặp sẽ dừng lại
+    n = Math.floor(n / 10); // lấy ra số nguyên khi n / 10; nếu n k chia het cho 10; thì vòng lặp sẽ dừng lại.
   }
 
   return sum == temp;
