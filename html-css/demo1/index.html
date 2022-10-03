@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template 1</title>
+    <link rel="icon" href="https://www.w3schools.com/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header bg-f1">
+        <ul class="navbar row">
+            <li class="nav-item col c-3 hover-color00"><a href="#" class="nav-link">Home</a></li>
+            <li class="nav-item col c-3 hover-color00"><a href="#plan" class="nav-link">Plans</a></li>
+            <li class="nav-item col c-3 hover-color00"><a href="#about" class="nav-link">About</a></li>
+            <li class="nav-item col c-3 hover-color00"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- Container -->
+    <div class="container grid wide pad-tb-64">
+        <div class="panel pad-lr-12">
+            <h1 class="title">
+                <b>marketing</b>
+            </h1>
+            <p class="sub-title">Template by w3.css</p>
+        </div>
+
+        <!-- Slide -->
+        <div class="slides pad-lr-12 row">
+            <div class="slide-item col l-12">
+                <img src="./assets/img/slide-1.jpg" alt="slide-1" class="slide-thumb">
+
+                <div class="slide-text text-top-left">
+                    <p class="animate-bottom">Lorem ipsum</p>
+                </div>
+            </div>
+
+            <div class="slide-item col l-12">
+                <img src="./assets/img/slide-2.jpg" alt="slide-2" class="slide-thumb">
+
+                <div class="slide-text text-middle">
+                    <p class="animate-bottom">Klorim tipsum</p>
+                </div>
+            </div>
+
+            <div class="slide-item col l-12">
+                <img src="./assets/img/slide-3.jpg" alt="slide-2" class="slide-thumb">
+
+                <div class="slide-text text-top-right">
+                    <p class="animate-bottom">Klorim tipsum</p>
+                </div>
+            </div>
+
+            <div class="col relative">
+                <div class="slide-nav bg-61 c-12">
+                    <div class="icon ic-left hover-color88" onclick="changeImg(-1)">
+                        <i class="fa-solid fa-circle-arrow-left"></i>
+                    </div>
+                    <div class="icon-center">
+                        <div class="icon-center-item hover-white" onclick="currentImg(1)"></div>
+                        <div class="icon-center-item hover-white" onclick="currentImg(2)"></div>
+                        <div class="icon-center-item hover-white white" onclick="currentImg(3)"></div>
+                    </div>
+                    <div class="icon ic-right hover-color88" onclick="changeImg(1)">
+                        <i class="fa-solid fa-circle-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Offer -->
+        <div class="offer-content pad-lr-12 row">
+            <div class="text-center col l-12 m-12 c-12 pad-tb-64">
+                <h1 class="content-title pad-tb-12 border-bottom">What We Offer</h1>
+            </div>
+
+            <div class="offer-section bg-f1 pad-16 col m-6 l-3 c-12">
+                <h3 class="content-title margin-tb-10">Design</h3>
+                <p class="sub-title">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales
+                    pellentesque elementum.</p>
+            </div>
+
+            <div class="offer-section bg-9e pad-16 col m-6 l-3 c-12">
+                <h3 class="content-title margin-tb-10">Branding</h3>
+                <p class="sub-title">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales
+                    pellentesque elementum.</p>
+            </div>
+
+            <div class="offer-section bg-61 pad-16 col m-6 l-3 c-12">
+                <h3 class="content-title margin-tb-10">Consultation</h3>
+                <p class="sub-title">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales
+                    pellentesque elementum.</p>
+            </div>
+
+            <div class="offer-section bg-0 pad-16 col m-6 l-3 c-12">
+                <h3 class="content-title margin-tb-10">Promises</h3>
+                <p class="sub-title">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales
+                    pellentesque elementum.</p>
+            </div>
+        </div>
+
+        <!-- Plans content -->
+
+        <div class="jus-between pad-lr-12 row" id="plan">
+            <div class="text-center col l-12 m-12 c-12 pad-tb-64">
+                <h1 class="content-title">Pricing Plans</h1>
+                <p class="sub-title">Choose a pricing plan that fits your needs.</p>
+            </div>
+
+            <div class="plan-list col l-4 m-4 c-12">
+                <ul class="plan-item text-center hover-shadow">
+                    <li class="content-title bg-0 pad-tb-32">Basic</li>
+                    <li class="pad-16 font-15">
+                        <b>10GB</b>
+                        Storage
+                    </li>
+                    <li class="pad-16 font-15">
+                        <b>10</b>
+                        Email
+                    </li>
+                    <li class="pad-16 font-15">
+                        <b>10</b>
+                        Domain
+                    </li>
+                    <li class="pad-16 font-15">
+                        <b>Endless</b>
+                        Support
+                    </li>
+                    <li class="pad-16 font-15">
+                        <h2 class="letter-4">$ 10</h2>
+                        <p class="opa-6">per month</p>
+                    </li>
+                    <li class="bg-f1 pad-24">
+                        <button class="btn btn-sign hover-color00">Sign Up</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="plan-list col l-4 m-4 c-12">
+                <ul class="plan-item text-center hover-shadow">
+                    <li class="content-title bg-61 pad-tb-32">Basic</li>
+                    <li class="pad-16 font-15">
+                        <b>25GB</b>
+                        Storage
+                    </li>
+                    <li class="pad-16 font-15">
+                        <b>25</b>
+                        Email
+                    </li>
+                    <li class="pad-16 font-15">
+                        <b>25</b>
+                        Domain
+                    </li>
+                    <li class="pad-16 font-15">
+                        <b>Endless</b>
+                        Support
+                    </li>
+                    <li class="pad-16 font-15">
+                        <h2 class="letter-4">$ 25</h2>
+                        <p class="opa-6">per month</p>
+                    </li>
+                    <li class="bg-f1 pad-24">
+                        <button class="btn btn-sign hover-color00">Sign Up</button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="plan-list col l-4 m-4 c-12">
+                <ul class="plan-item text-center hover-shadow">
+                    <li class="content-title bg-0 pad-tb-32">Premium</li>
+                    <li class="pad-16 font-15">
+                        <b>50GB</b>
+                        Storage
+                    </li>
+                    <li class="pad-16 font-15">
+                        <b>50</b>
+                        Email
+                    </li>
+                    <li class="pad-16 font-15">
+                        <b>50</b>
+                        Domain
+                    </li>
+                    <li class="pad-16 font-15">
+                        <b>Endless</b>
+                        Support
+                    </li>
+                    <li class="pad-16 font-15">
+                        <h2 class="letter-4">$ 50</h2>
+                        <p class="opa-6">per month</p>
+                    </li>
+                    <li class="bg-f1 pad-24">
+                        <button class="btn btn-sign hover-color00">Sign Up</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- About -->
+        <div class="pad-lr-12 row" id="about">
+            <div class="text-center col l-12 m-12 c-12 pad-tb-64">
+                <h1 class="content-title pad-tb-12 border-bottom">Who we are</h1>
+            </div>
+
+            <div class="about-list row">
+                <div class="about-item col l-4 m-4 c-12">
+                    <div class="card-item">
+                        <img src="./assets/img/team1.jpg" alt="member-1" class="slide-thumb">
+                        <div class="card-info">
+                            <h3 class="content-title">Jane Doe</h3>
+                            <p class="sub-title opa-6">CEO & Founder</p>
+                            <p class="sub-title">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales
+                                pellentesque elementum.
+                            </p>
+
+                            <p class="sub-title text-center bg-f1">
+                                <button class="btn btn-contact font-15 hover-color00">Contact</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-item col l-4 m-4 c-12">
+                    <div class="card-item">
+                        <img src="./assets/img/team2.jpg" alt="member-2" class="slide-thumb">
+                        <div class="card-info">
+                            <h3 class="content-title">Mike Ross</h3>
+                            <p class="sub-title opa-6">Art Director</p>
+                            <p class="sub-title">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales
+                                pellentesque elementum.
+                            </p>
+
+                            <p class="sub-title text-center bg-f1">
+                                <button class="btn btn-contact font-15 hover-color00">Contact</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-item col l-4 m-4 c-12">
+                    <div class="card-item">
+                        <img src="./assets/img/team3.jpg" alt="member-3" class="slide-thumb">
+                        <div class="card-info">
+                            <h3 class="content-title">Jane Doe</h3>
+                            <p class="sub-title opa-6">Designer</p>
+                            <p class="sub-title">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales
+                                pellentesque elementum.
+                            </p>
+
+                            <p class="sub-title text-center bg-f1">
+                                <button class="btn btn-contact font-15 hover-color00">Contact</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact -->
+
+        <div id="contact" class="pad-lr-12 row">
+            <div class="text-center col l-12 m-12 c-12 pad-t64-b32">
+                <h1 class="content-title pad-tb-12 border-bottom">Contact us</h1>
+            </div>
+
+            <form class="form font-15" action="#" target="_blank">
+                <div class="form-section margin-tb-10">
+                    <!-- <label>Name</label> -->
+                    <input class="form-input hover-bd-00" type="text" name="Name" placeholder="Name">
+                </div>
+                <div class="form-section margin-tb-10">
+                    <!-- <label>Email</label> -->
+                    <input class="form-input hover-bd-00" type="email" name="Email" placeholder="Email">
+                </div>
+                <div class="form-section margin-tb-10">
+                    <!-- <label>Subject</label> -->
+                    <input class="form-input hover-bd-00" name="Subject" placeholder="Subject">
+                </div>
+                <div class="form-section margin-tb-10">
+                    <!-- <label>Message</label> -->
+                    <input class="form-input hover-bd-00" name="Message" placeholder="Message">
+                </div>
+                <div class="sub-title"><button type="submit"
+                        class="btn btn-contact bg-0 font-15 hover-color00">Send</button></div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer bg-f1 text-center pad-tb32-lr16">
+        <h4 class="margin-tb-10">Footer</h4>
+
+        <a href="#" class="btn btn-top bg-0 hover-color00">
+            <i class="icon-up fa-solid fa-arrow-up"></i>
+            To the top
+        </a>
+
+        <div class="media">
+            <i class="icon hover-opa-6 fa-brands fa-square-facebook"></i>
+            <i class="icon hover-opa-6 fa-brands fa-instagram"></i>
+            <i class="icon hover-opa-6 fa-brands fa-square-snapchat"></i>
+            <i class="icon hover-opa-6 fa-brands fa-pinterest"></i>
+            <i class="icon hover-opa-6 fa-brands fa-twitter"></i>
+            <i class="icon hover-opa-6 fa-brands fa-linkedin-in"></i>
+        </div>
+
+        <p class="sub-title">Clone by <a>HuanPT</a></p>
+    </footer>
+
+    <script>
+        let slideIndex = 1;
+        showImg(slideIndex);
+
+        function changeImg(n) {
+            showImg(slideIndex += n);
+        }
+
+        function currentImg(n) {
+            showImg(slideIndex = n)
+        }
+
+        function showImg(n) {
+            let i;
+            let x = document.getElementsByClassName('slide-item');
+            let change = document.getElementsByClassName("icon-center-item");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length };
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < change.length; i++) {
+                change[i].className = change[i].className.replace(" white");
+            }
+            x[slideIndex - 1].style.display = "block"
+            change[slideIndex - 1].className += " white";
+        }
+
+    </script>
+</body>
+
+</html>
