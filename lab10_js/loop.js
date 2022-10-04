@@ -17,29 +17,29 @@ console.log(repeatString("a"));
  * Bài 2. Viết function truyền vào 1 chuỗi bất kỳ, hãy viết hàm có tác dụng sao chép đó chuỗi lên 10 lần, ngăn cách nhau bởi dấu gạch ngang.
  * Ví dụ: repeatString(“a”) => Kết quả trả về là “a-a-a-a-a-a-a-a-a-a”
  */
-// function repeatString(str) {
-//   newStr = "";
-//   for (let i = 0; i < 10; i++) {
-//     if (i == 0) newStr += str;
-//     else newStr += "-" + str;
-//   }
-//   return newStr;
-// }
-// console.log(repeatString("a"));
+function repeatStringLink(str) {
+  newStr = "";
+  for (let i = 0; i < 10; i++) {
+    if (i == 0) newStr += str;
+    else newStr += "-" + str;
+  }
+  return newStr;
+}
+console.log(repeatStringLink("a"));
 
 /**
  * Bài 3. Viết function truyền vào 1 chuỗi bất kỳ và 1 số nguyên dương n > 1, hãy viết hàm có tác dụng sao chép đó chuỗi lên n lần, ngăn cách nhau bởi dấu gạch ngang.
  * Ví dụ: repeatString(‘a’, 5) => Kết quả trả về là ‘a-a-a-a-a’
  */
-// function repeatString(str, num) {
-//   newStr = "";
-//   for (let i = 0; i < num; i++) {
-//     if (i == 0) newStr += str;
-//     else newStr += "-" + str;
-//   }
-//   return newStr;
-// }
-// console.log(repeatString("a", 5));
+function repeatStringNum(str, num) {
+  newStr = "";
+  for (let i = 0; i < num; i++) {
+    if (i == 0) newStr += str;
+    else newStr += "-" + str;
+  }
+  return newStr;
+}
+console.log(repeatStringNum("a", 5));
 
 /**
  * Bài 4. Viết function tính tổng các số chia hết cho 5 từ 0 -> 100
