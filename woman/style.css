@@ -1,0 +1,389 @@
+* {
+  background: #fff;
+  color: #1c1e21;
+  line-height: 1.34;
+  margin: 0;
+  padding: 0;
+  direction: ltr;
+  unicode-bidi: embed;
+  box-sizing: border-box;
+}
+
+.main {
+  background: #e36b6b;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: center;
+  flex-direction: column;
+  padding-bottom: 64px;
+}
+
+.form {
+  width: 290px;
+  margin: 24px;
+  height: 550px;
+  min-height: 100px;
+  align-self: center;
+  background: url(./assets/img/1.jpg) center / cover no-repeat;
+  box-shadow: 0 2px 5px rgba(51, 63, 73, 0.1);
+  position: relative;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.wavy {
+  width: 100%;
+  font-size: 20px;
+  top: 100px;
+  display: block;
+  font-weight: 700;
+  position: absolute;
+  background-color: transparent;
+}
+
+.wavy-text {
+  color: #e7ff97;
+  display: inline-block;
+  text-transform: uppercase;
+  background-color: transparent;
+  animation: fly 1.8s linear infinite normal both;
+  animation-delay: calc(var(--i) * 0.2s);
+}
+
+@keyframes fly {
+  from {
+    transform: translateY(0);
+  }
+
+  10% {
+    transform: translateY(0);
+  }
+
+  55% {
+    transform: translateY(-150%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.heart-wrap {
+  position: relative;
+  height: 550px;
+  background: transparent;
+}
+
+.heart {
+  left: 50px;
+  top: 160px;
+  position: absolute;
+  background: transparent;
+  animation-delay: 0.3s;
+  animation: heart 2s linear 0s infinite both;
+}
+
+.icon-heart {
+  z-index: 1;
+  color: #31fad4;
+  top: 10px;
+  font-size: 50px;
+  background: transparent;
+}
+
+.heart-bg {
+  position: absolute;
+  animation-delay: 0.3s;
+  animation: scale 2s linear 0s infinite;
+}
+
+.heart-2 {
+  right: 60px;
+  top: 40px;
+  position: absolute;
+  background: transparent;
+  animation-delay: 0.4s;
+
+  animation: heart 2s linear 0s infinite both;
+}
+
+.icon-heart-2 {
+  z-index: 1;
+  top: 10px;
+  color: rgb(255, 0, 0);
+  font-size: 50px;
+  background: transparent;
+}
+
+.heart-bg-2 {
+  position: absolute;
+  animation-delay: 0.4s;
+
+  animation: scale 2s linear 0s infinite;
+}
+
+.heart-3 {
+  right: 40px;
+  bottom: 240px;
+  position: absolute;
+  background: transparent;
+
+  animation: heart 2s linear 0s infinite both;
+  animation-delay: 0.5s;
+}
+
+.icon-heart-3 {
+  z-index: 1;
+  top: 10px;
+  font-size: 50px;
+  color: rgb(231, 255, 151);
+  background: transparent;
+}
+
+.heart-bg-3 {
+  position: absolute;
+
+  animation: scale 2s linear 0s infinite;
+  animation-delay: 0.5s;
+}
+
+.heart-4 {
+  right: 54px;
+  bottom: 100px;
+  position: absolute;
+  background: transparent;
+  animation-delay: 0.2s;
+  animation: heart 2s linear 0s infinite both;
+}
+
+.icon-heart-4 {
+  z-index: 1;
+  top: 10px;
+  font-size: 50px;
+  color: #ff69b4;
+  background: transparent;
+}
+
+.heart-bg-4 {
+  position: absolute;
+  animation-delay: 0.2s;
+  animation: scale 2s linear 0s infinite;
+}
+
+.heart-5 {
+  left: 24px;
+  bottom: 137px;
+
+  position: absolute;
+  background: transparent;
+
+  animation: heart 2s linear 0.7s infinite both;
+}
+
+.icon-heart-5 {
+  z-index: 1;
+  top: 10px;
+  font-size: 50px;
+  color: #ff7244;
+  background: transparent;
+}
+
+.heart-bg-5 {
+  position: absolute;
+  animation: scale 2s linear 0.7s infinite;
+}
+
+@keyframes heart {
+  from {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0 0 0 / 0%);
+  }
+
+  40% {
+    transform: scale(1.4);
+    text-shadow: 0 10px 25px rgba(0 0 0 / 30%);
+  }
+
+  50% {
+    transform: scale(1.5);
+    text-shadow: 0 10px 25px rgba(0 0 0 / 30%);
+  }
+
+  60% {
+    transform: scale(1.4);
+    text-shadow: 0 10px 25px rgba(0 0 0 / 30%);
+  }
+
+  80% {
+    text-shadow: none;
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+
+  80% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+
+  to {
+    transform: scale(1.8);
+    opacity: 0.1;
+  }
+}
+
+.snow_wrap {
+  z-index: 5;
+  top: 0;
+  width: 100%;
+  height: 550px;
+  font-size: 30px;
+  display: block;
+  font-weight: 700;
+  position: absolute;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.snow,
+.snow:before,
+.snow:after {
+  position: absolute;
+  top: -560px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+  background-image: radial-gradient(4px 4px at 100px 50px, #fff, transparent),
+    radial-gradient(6px 6px at 200px 150px, #fff, transparent),
+    radial-gradient(3px 3px at 300px 250px, #fff 50%, transparent),
+    radial-gradient(4px 4px at 400px 350px, #fff 50%, transparent),
+    radial-gradient(6px 6px at 500px 100px, #fff 50%, transparent),
+    radial-gradient(3px 3px at 50px 200px, #fff 50%, transparent),
+    radial-gradient(4px 4px at 150px 300px, #fff 50%, transparent),
+    radial-gradient(6px 6px at 250px 400px, #fff 50%, transparent),
+    radial-gradient(3px 3px at 350px 500px, #fff 50%, transparent);
+  background-size: 650px 650px;
+  animation: snow 5s linear infinite;
+  content: "";
+}
+
+.snow:after {
+  margin-left: -150px;
+  opacity: 0.8;
+  filter: blur(2px);
+  animation-duration: 6s;
+  animation-direction: inherit;
+}
+
+.snow:before {
+  margin-left: 150px;
+  opacity: 0.6;
+  filter: blur(1px);
+  animation-duration: 9s;
+  animation-direction: inherit;
+}
+
+@keyframes snow {
+  from {
+    opacity: 1;
+  }
+  to {
+    transform: translateY(550px);
+    opacity: 0;
+  }
+}
+
+.text-new-year {
+  width: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  bottom: 240px;
+  display: block;
+  font-weight: 300;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.text {
+  color: #00cbff;
+  background-color: transparent;
+}
+
+.color {
+  display: inline-block;
+  color: transparent;
+  background: conic-gradient(
+    #d2141a 12%,
+    #60caf3 12%,
+    #30c5ff 35%,
+    #ffd700 35%,
+    #ffd700 55%,
+    #ff69b4 55%,
+    #ff69b4 70%,
+    #d1e231 70%,
+    #d1e231 90%,
+    #d09ee1 90%
+  );
+  background-size: 50%;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.color1 {
+  display: inline-block;
+  color: transparent;
+  background: conic-gradient(
+    #be2626 12%,
+    #cad229 12%,
+    #eaf893 35%,
+    #33c433 35%,
+    #29d816 55%,
+    #41d3ec 55%,
+    #69beff 70%,
+    #6331e2 70%,
+    #3d31e2 90%,
+    #e19ed8 90%
+  );
+  background-size: 50%;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.text-title {
+  font-size: 20px;
+  font-weight: 600;
+  padding-bottom: 5px;
+  background-color: transparent;
+}
+
+.icon {
+  left: 0;
+  bottom: 29px;
+  position: absolute;
+  background-color: transparent;
+  right: 0;
+  height: 50px;
+}
+
+.icon > img {
+  max-height: 40px;
+  vertical-align: middle;
+  background-color: transparent;
+}
+audio {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  align-self: center;
+  background-color: transparent;
+}
