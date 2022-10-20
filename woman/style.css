@@ -76,8 +76,8 @@
 }
 
 .heart {
-  left: 50px;
-  top: 160px;
+  left: 100px;
+  top: 177px;
   position: absolute;
   background: transparent;
   animation-delay: 0.3s;
@@ -124,8 +124,8 @@
 }
 
 .heart-3 {
-  right: 40px;
-  bottom: 240px;
+  right: 90px;
+  bottom: 305px;
   position: absolute;
   background: transparent;
 
@@ -172,8 +172,8 @@
 }
 
 .heart-5 {
-  left: 24px;
-  bottom: 137px;
+  left: 60px;
+  bottom: 185px;
 
   position: absolute;
   background: transparent;
@@ -307,7 +307,7 @@
   width: 100%;
   font-size: 12px;
   line-height: 20px;
-  bottom: 240px;
+  bottom: 35px;
   display: block;
   font-weight: 300;
   position: absolute;
@@ -368,7 +368,7 @@
 
 .icon {
   left: 0;
-  bottom: 29px;
+  top: 130px;
   position: absolute;
   background-color: transparent;
   right: 0;
