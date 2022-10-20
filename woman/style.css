@@ -20,9 +20,9 @@
 }
 
 .form {
-  width: 320px;
+  width: 390px;
   margin: 12px;
-  height: 550px;
+  height: 560px;
   min-height: 100px;
   align-self: center;
   background: url(./assets/img/1.jpg) center / cover no-repeat;
