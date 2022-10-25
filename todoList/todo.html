@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f1f1f1;
+        }
+
+        form {
+            min-width: 350px;
+        }
+
+        .container {
+            margin-top: 50px;
+            padding: 40px 10px 20px;
+            background-color: #F44336;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .heading {
+            text-transform: capitalize;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            font-weight: normal;
+            letter-spacing: 0.05em;
+        }
+
+        .input-group {
+            height: 40px;
+            padding: 0 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .input-group input {
+            min-width: 350px;
+            height: 100%;
+            line-height: 40px;
+            border: none;
+            outline: none;
+            padding: 0 10px;
+            font-size: 16px;
+        }
+
+        .input-group input:focus {
+            outline: none;
+        }
+
+        .btn-add {
+            text-transform: uppercase;
+            display: inline-block;
+            background-color: #F44336;
+            color: #fff;
+            height: 100%;
+            padding: 0 10px;
+            border: 1px solid rgba(255, 255, 255, .3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .error {
+            padding: 0 30px;
+            position: absolute;
+            display: none;
+            color: black;
+            font-size: 14px;
+            z-index: 1;
+        }
+
+        .filter {
+            display: flex;
+            justify-content: end;
+            padding: 16px 50px 0;
+            gap: 6px;
+        }
+
+        .filter-item {
+            border: 1px solid rgba(255, 255, 255, .3);
+            padding: 6px;
+            font-size: 14px;
+            display: flex;
+            gap: 5px;
+        }
+
+        .todo-list {
+            max-height: 210px;
+            margin-top: 20px;
+            overflow: auto;
+            overflow: -moz-scrollbars-none;
+            -ms-overflow-style: none;
+        }
+
+        .todo-list::-webkit-scrollbar {
+            width: 0;
+            display: none;
+        }
+
+        .todo-item {
+
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #f4f4f4;
+            margin-bottom: 6px;
+            padding: 10px 50px;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .todo-item.active-todo .todo-content {
+            position: relative;
+            font-style: italic;
+            text-decoration: line-through;
+        }
+
+        .todo-content {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn {
+            border: none;
+            color: #fff;
+            padding: 6px;
+            border: 1px solid #fff;
+            background-color: #F44336;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all .2s ease-in;
+        }
+
+        .btn:hover,
+        .btn-add:hover {
+            background-color: #fa877f;
+        }
+
+        .summary {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="heading">Simple TodoApp</h1>
+        <form action="">
+            <div class="input-group">
+                <input type="text" placeholder="What do you want to do?" class="add-input" />
+                <button class="btn-add" type="button">Create</button>
+            </div>
+            <p class="error"></p>
+            <div class="filter">
+                <div class="filter-item">
+                    <input type="radio" name="filter" id="all" checked value="1">
+                    <label for="all">All</label>
+                </div>
+                <div class="filter-item">
+                    <input type="radio" name="filter" id="active" value="2">
+                    <label for="active">Active</label>
+                </div>
+                <div class="filter-item">
+                    <input type="radio" name="filter" id="completed" value="3">
+                    <label for="completed">Completed</label>
+                </div>
+            </div>
+        </form>
+        <div class="todo-list">
+            <div class="todos">
+                <!-- <div class="todo-item">
+                    <div class="todo-content">
+                        <input type="checkbox" class="check">
+                        <span class="todo-title">Học Javascript</span>
+                    </div>
+                    <button class="btn btn-remove">Remove</button>
+                </div>
+
+                <div class="todo-item">
+                    <div class="todo-content">
+                        <input type="checkbox" class="check">
+                        <span class="todo-title">Học HTML/CSS</span>
+                    </div>
+                    <button class="btn btn-remove">Remove</button>
+                </div> -->
+            </div>
+        </div>
+        <div class="summary">
+            <div class="pending">
+            </div>
+            <button class="btn btn-clear">Clear All</button>
+        </div>
+    </div>
+
+    <script src="./todo.js"></script>
+</body>
+
+</html>
