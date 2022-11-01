@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme-Clocks</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #333;
+            --secondary-color: #f1f1f1;
+        }
+
+        html {
+            transition: all .5s ease-in;
+        }
+
+        html.dark {
+            --primary-color: #f1f1f1;
+            --secondary-color: #333;
+        }
+
+        html.dark {
+            background-color: #111;
+            color: var(--primary-color);
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .toggle {
+            cursor: pointer;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            border: 0;
+            border-radius: 4px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 50px;
+        }
+
+        .clock-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .number {
+            position: absolute;
+            font-size: 22px;
+            color: var(--secondary-color);
+            transform-origin: bottom center;
+        }
+
+        .number.n1 {
+            top: 10.5%;
+            left: 68%;
+            transform: translate(-50%, 0%) rotate(30deg);
+        }
+
+        .number.n2 {
+            top: 23.5%;
+            left: 81%;
+            transform: translate(-50%, 0%) rotate(60deg);
+        }
+
+        .number.n3 {
+            top: 42%;
+            left: 86%;
+            transform: translate(-50%, 0%) rotate(90deg);
+        }
+
+        .number.n4 {
+            top: 60%;
+            left: 81%;
+            transform: translate(-50%, 0%) rotate(120deg);
+        }
+
+        .number.n5 {
+            top: 73%;
+            left: 68%;
+            transform: translate(-50%, 0%) rotate(150deg);
+        }
+
+        .number.n6 {
+            bottom: 14%;
+            left: 50%;
+            transform: translate(-50%, 0%) rotate(180deg);
+        }
+
+        .number.n7 {
+            bottom: 19%;
+            right: 59%;
+            transform: translate(-50%, 0%) rotate(210deg);
+        }
+
+        .number.n8 {
+            bottom: 31%;
+            left: 19%;
+            transform: translate(-50%, 0%) rotate(240deg);
+        }
+
+        .number.n9 {
+            top: 42%;
+            right: 79%;
+            transform: translate(-50%, 0%) rotate(270deg);
+        }
+
+        .number.n10 {
+            top: 23.5%;
+            right: 76.5%;
+            transform: translate(-50%, 0%) rotate(300deg);
+        }
+
+        .number.n11 {
+            top: 11%;
+            left: 31%;
+            transform: translate(-50%, 0%) rotate(330deg);
+        }
+
+        .number.n12 {
+            top: 5.5%;
+            left: 50%;
+            transform: translate(-50%, 0%) rotate(0deg);
+        }
+
+
+        .clock {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .needle {
+            background-color: var(--primary-color);
+            position: absolute;
+            transform: rotate(90deg);
+            top: 50%;
+            left: 50%;
+            height: 65px;
+            width: 3px;
+            transform-origin: bottom center;
+            transition: all ;
+            /* transform-origin: 100%; */
+            transform: rotate(90deg);
+            transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+        }
+
+        .needle.hour {
+            transform: translate(-50%, -100%);
+            /* rotate(0deg) */
+            background-color: var(--secondary-color);
+        }
+
+        .needle.minute {
+            transform: translate(-50%, -100%);
+            /* rotate(0deg) */
+            background-color: var(--secondary-color);
+            height: 90px;
+
+        }
+
+        .needle.second {
+            transform: translate(-50%, -100%);
+            /* rotate(0deg) */
+            height: 100px;
+            background: red;
+        }
+
+        .center-point {
+            background: red;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .center-point::after {
+            content: "";
+            background: var(--secondary-color);
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .time {
+            font-size: 60px;
+        }
+
+        .date {
+            color: #aaa;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .date .circle {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            border-radius: 50%;
+            height: 18px;
+            width: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 18px;
+            transition: all 0.3s ease-in;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="toggle">Dark Mode</button>
+
+    <div class="clock-container">
+        <div class="clock">
+            <span class="number n1">I</span>
+            <span class="number n2">II</span>
+            <span class="number n3">III</span>
+            <span class="number n4">IV</span>
+            <span class="number n5">V</span>
+            <span class="number n6">VI</span>
+            <span class="number n7">VII</span>
+            <span class="number n8">VIII</span>
+            <span class="number n9">IX</span>
+            <span class="number n10">X</span>
+            <span class="number n11">XI</span>
+            <span class="number n12">XII</span>
+
+            <div class="needle hour"></div>
+            <div class="needle minute"></div>
+            <div class="needle second"></div>
+            <div class="center-point"></div>
+        </div>
+        <div class="time"></div>
+        <div class="date"></div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+
+</html>

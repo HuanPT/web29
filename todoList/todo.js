@@ -50,15 +50,16 @@ const filterCompleted = document.querySelector("#completed");
 }
 function createTodo(todo) {
   const todoItem = document.createElement("div");
-  todoItem.classList.add("todo-item");
+  // todoItem.classList.add("todo-item");
+  todoItem.className = todo.status ? "todo-item active-todo" : "todo-item";
 
   const todoContent = document.createElement("div");
   todoContent.classList.add("todo-content");
 
   const input = document.createElement("input");
   input.type = "checkbox";
+  input.checked = todo.status;
   input.classList.add("check");
-  input.value = todo.id;
 
   const spanTitle = document.createElement("span");
   spanTitle.classList.add("todo-title");
@@ -66,10 +67,10 @@ function createTodo(todo) {
 
   todoContent.appendChild(input);
   todoContent.appendChild(spanTitle);
-  if (todo.status) {
-    todoItem.classList.add("active-todo");
-    input.checked = true;
-  }
+  // if (todo.status) {
+  //   todoItem.classList.add("active-todo");
+  //   input.checked = true;
+  // }
 
   // Pending
   pending.innerText = `có tất cả ${todosList.childElementCount + 1} công việc!`;
@@ -158,7 +159,7 @@ btnAdd.addEventListener("click", () => {
     };
     inputAdd.value = "";
     todos.push(newTodo);
-    todosList.append(createTodo(newTodo));
+    todosList.prepend(createTodo(newTodo));
   }
 });
 

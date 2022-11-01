@@ -1,0 +1,288 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  box-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
+  position: relative;
+  background-color: #30598c;
+}
+
+.logo {
+  width: 100px;
+}
+
+.logo-img {
+  max-width: 100%;
+}
+
+.header-content {
+  height: 61px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  width: 1200px;
+  font-size: 14px;
+  background-color: #30598c;
+  color: #fff;
+}
+
+.nav-menu {
+  align-items: center;
+  display: flex;
+  gap: 24px;
+}
+
+.nav-item {
+  list-style: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  line-height: 61px;
+}
+
+.fa-shopping-cart {
+  font-size: 20px;
+}
+
+.hover:hover {
+  color: #c4c4c4;
+}
+
+.user {
+  overflow: hidden;
+  padding: 0 10px;
+  width: 50px;
+}
+
+.user img {
+  transform: translateY(10px);
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+.sub-container {
+  display: none;
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  max-width: 1290px;
+  margin: auto;
+  padding: 48px 30px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1290px;
+  margin: auto;
+  padding: 48px 30px;
+}
+.cart-title {
+  padding: 0 15px;
+  flex: 70%;
+  margin-bottom: 10px;
+}
+
+.total {
+  text-align: center;
+  align-self: center;
+  flex: 30%;
+}
+.cart-list {
+  flex: 75%;
+  padding: 0 15px;
+}
+
+.cart-item {
+  display: flex;
+  height: 150px;
+  background-color: #f4f7fa;
+  border: 1px solid #c3c3c3;
+  border-radius: 4px;
+}
+
+.cart-item:not(:first-child) {
+  margin-top: 20px;
+}
+
+.item-img {
+  border-bottom-left-radius: 4px;
+  border-top-left-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  height: 150px;
+  width: 200px;
+}
+
+.item-img img {
+  max-width: 100%;
+  vertical-align: middle;
+  border-style: none;
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 150px;
+  padding: 15px 30px;
+  width: calc(100% - 200px);
+}
+
+.item-title {
+  float: left;
+  font-size: 1.2rem;
+  width: 70%;
+}
+
+.item-title a {
+  text-decoration: none;
+  font-size: 19px;
+  color: #5e5e5e;
+}
+
+.item-title p {
+  font-size: 15px;
+  color: #808080;
+}
+
+.item-price {
+  float: left;
+  text-align: right;
+  width: 30%;
+}
+
+.promotion-item {
+  color: #f99600;
+  font-size: 1.2rem;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #c4c4c4;
+}
+
+.section {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+.quantity {
+  display: flex;
+  height: 30px;
+}
+
+.quantity input {
+  width: 30px;
+  text-align: center;
+  font-size: 15px;
+  border: 1px solid #c4c4c4;
+  border-radius: 2px;
+  outline: none;
+}
+
+input:focus-visible {
+  border: 3px solid #30598c !important;
+  box-shadow: 0 0 0 0 #30598c !important;
+  height: 30px;
+}
+
+.minus {
+  color: #c4c4c4;
+  cursor: pointer;
+  padding: 0 3px;
+  border-radius: 2px;
+  border: 1px solid #c4c4c4;
+}
+
+.fa-plus,
+.fa-minus {
+  transform: translateY(2px);
+}
+
+.plus {
+  color: #288ad6;
+  cursor: pointer;
+  padding: 0 3px;
+  border-radius: 2px;
+  border: 1px solid #c4c4c4;
+}
+
+.btn-remove {
+  cursor: pointer;
+  color: #3c78e8;
+}
+
+.final-total {
+  flex: 25%;
+  padding: 0 15px;
+}
+
+.total-price {
+  font-size: 20px;
+  background-color: #f4f7fa;
+  border: 1px solid #c3c3c3;
+  border-radius: 4px;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.number-money {
+  font-weight: bold;
+  color: #3c78e8;
+}
+
+.discount {
+  margin: 0 0 30px 0;
+}
+
+.discount input {
+  outline: none;
+  border: 1px solid #c3c3c3;
+  height: 30px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 2px;
+}
+
+.btn-pay {
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 10px;
+  background-color: #3c78e8;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  padding: 10px 0;
+  text-align: center;
+  transition: 0.5s;
+  transition: all 0.2s;
+}
+
+.btn-pay:hover {
+  opacity: 0.85;
+}
+
+.discount-text {
+  font-size: 14px;
+}

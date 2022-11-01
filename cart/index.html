@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="header">
+        <div class="header-content">
+            <div class="logo">
+                <a href="#">
+                    <img src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png"
+                        class="logo-img" alt="img">
+                </a>
+            </div>
+
+            <ul class="nav-menu">
+                <li class="nav-item hover">Khóa học
+                    <i class="fas fa-caret-down"></i>
+                </li>
+                <li class="nav-item hover">Sản Phẩm học viên</li>
+                <li class="nav-item hover">khai giảng</li>
+                <li class="nav-item hover">blog</li>
+                <li class="nav-item hover">trải nghiệm</li>
+                <li class="nav-item hover">việc làm</li>
+                <li class="nav-item hover">Chúng tôi
+                    <i class="fas fa-caret-down"></i>
+                </li>
+                <li class="nav-item"><i class="fas fa-shopping-cart shopping-cart-top-menu"></i></li>
+                <li class="nav-item">
+                    <div class="user">
+                        <img src="https://techmaster.vn/resources/image/anonymous-user.jpg" alt="img">
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="sub-container">
+        <img src="https://techmaster.vn/resources/image/empty-cart.png " alt="sub-img" class="sub-img">
+
+        <p>không có khóa học nào trong giỏ hàng của bạn!</p>
+    </div>
+
+    <div class="container">
+        <h2 class="cart-title">Giỏ hàng</h2>
+        <p class="total">Có 3 sản phẩm trong giỏ hàng</p>
+        <div class="cart-list">
+            <!-- <div class="cart-item">
+                <div class="item-img">
+                    <img src="https://media.techmaster.vn/api/static/c2m5ou451cob24f6skeg/xQSZ4zy3" alt="thumbnail">
+                </div>
+                <div class="item-content">
+                    <div>
+                        <div class="item-title">
+                            <a href="#" target="_blank">Lớp học Web Frontend nâng cao với React</a>
+                            <p>Hình thức: lab</p>
+                        </div>
+
+                        <div class="item-price">
+                            <div class="promotion-item">5.500.000 đ</div>
+                            <div class="old-price">7.500.000 đ</div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <div class="btn-remove"><i class="far fa-trash-alt"></i> Xóa</div>
+
+                        <div class="quantity">
+                            <div class="minus"><i class="fa-solid fa-minus"></i></div>
+                            <input type="text" value="1">
+                            <div class="plus"><i class="fa-solid fa-plus"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="final-total">
+
+            <div class="discount">
+                <input type="text" id="discount-code" placeholder="Nhập Huandeptrai để được giảm 50%">
+                <p class="discount-text"></p>
+            </div>
+
+            <div class="total-price">
+                <span>Tạm tính: </span>
+                <span class="number-money"></span>
+            </div>
+            <button class="btn-pay">Tiến hành thanh toán</button>
+        </div>
+
+
+
+    </div>
+
+    <script src="./cart.js"></script>
+</body>
+
+</html>
