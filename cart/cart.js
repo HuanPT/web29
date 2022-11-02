@@ -1,33 +1,33 @@
-// let products = [
-//   {
-//     id: createId(),
-//     title: "Lớp học Web Frontend nâng cao với React",
-//     price: 5500000,
-//     priceOld: 7000000,
-//     description: "Hình thức học: Onlab",
-//     image:
-//       "https://media.techmaster.vn/api/static/c2m5ou451cob24f6skeg/xQSZ4zy3",
-//     count: 1,
-//   },
-//   {
-//     id: createId(),
-//     title: "Lớp học Spring Boot - Web Back End",
-//     price: 12000000,
-//     priceOld: 13500000,
-//     description: "Hình thức học: Onlab",
-//     image: "https://media.techmaster.vn/api/static/36/bu7v9ks51co41h2qcttg",
-//     count: 1,
-//   },
-//   {
-//     id: createId(),
-//     title: "Lớp học Java cấu trúc dữ liệu - giải thuật",
-//     price: 4500000,
-//     priceOld: 5000000,
-//     description: "Hình thức học: Onlab",
-//     image: "https://media.techmaster.vn/api/static/36/bu7v5ak51co41h2qctt0",
-//     count: 1,
-//   },
-// ];
+let products = [
+  {
+    id: createId(),
+    title: "Lớp học Web Frontend nâng cao với React",
+    price: 5500000,
+    priceOld: 7000000,
+    description: "Hình thức học: Onlab",
+    image:
+      "https://media.techmaster.vn/api/static/c2m5ou451cob24f6skeg/xQSZ4zy3",
+    count: 1,
+  },
+  {
+    id: createId(),
+    title: "Lớp học Spring Boot - Web Back End",
+    price: 12000000,
+    priceOld: 13500000,
+    description: "Hình thức học: Onlab",
+    image: "https://media.techmaster.vn/api/static/36/bu7v9ks51co41h2qcttg",
+    count: 1,
+  },
+  {
+    id: createId(),
+    title: "Lớp học Java cấu trúc dữ liệu - giải thuật",
+    price: 4500000,
+    priceOld: 5000000,
+    description: "Hình thức học: Onlab",
+    image: "https://media.techmaster.vn/api/static/36/bu7v5ak51co41h2qctt0",
+    count: 1,
+  },
+];
 
 let discountCode = {
   Huandeptrai: 50,
@@ -37,8 +37,7 @@ let discountCode = {
   G10: 10,
 };
 
-// let discountCode = JSON.parse(localStorage.getItem("discount")) || [];
-let products = JSON.parse(localStorage.getItem("cart-list")) || [];
+// let products = JSON.parse(localStorage.getItem("cart-list")) || [];
 
 const listItem = document.querySelector(".cart-list");
 const container = document.querySelector(".container");
@@ -47,6 +46,7 @@ const pTotal = document.querySelector(".total");
 const totalMoney = document.querySelector(".number-money");
 const discount = document.querySelector("#discount-code");
 const discountText = document.querySelector(".discount-text");
+const btnPay = document.querySelector(".btn-pay");
 
 function isDiscount() {
   let value = discount.value;
@@ -134,14 +134,6 @@ function createItem(product) {
       updateTotal();
       updatePrice();
       save();
-
-      if (e.target.value == 1) {
-        minus.style.color = "#c4c4c4";
-        minus.disabled = true;
-      } else {
-        minus.style.color = "#288ad6";
-        minus.disabled = false;
-      }
     } else {
       input.value = 1;
       alert("giá trị nhập vào không phải là số");
@@ -153,12 +145,13 @@ function createItem(product) {
   minus.innerHTML = '<i class="fa-solid fa-minus">';
   minus.onclick = () => {
     if (input.value > 1) {
-      minus.disabled = false;
       input.value -= 1;
+      minus.disabled = false;
       product.count = input.value;
       promotion.innerText = convertMoney(product.price * product.count);
       priceOld.innerText = convertMoney(product.priceOld * product.count);
-    } else {
+    }
+    if (input.value == 1) {
       minus.style.color = "#c4c4c4";
       minus.disabled = true;
     }
@@ -284,6 +277,12 @@ discount.addEventListener("change", (e) => {
     totalMoney.innerText = updatePrice();
   }
 });
+
+btnPay.onclick = () => {
+  if (confirm("Xác nhận thanh toán")) {
+    alert("Chúc mừng bạn đã thanh toán thành công");
+  }
+};
 
 window.onload = function () {
   renderProduct();
