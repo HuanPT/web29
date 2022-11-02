@@ -29,6 +29,9 @@ let products = [
   },
 ];
 
+// let products = JSON.parse(localStorage.getItem("cart-list")) || [];
+
+
 let discountCode = {
   Huandeptrai: 50,
   G40: 40,
@@ -36,8 +39,6 @@ let discountCode = {
   G20: 20,
   G10: 10,
 };
-
-// let products = JSON.parse(localStorage.getItem("cart-list")) || [];
 
 const listItem = document.querySelector(".cart-list");
 const container = document.querySelector(".container");
