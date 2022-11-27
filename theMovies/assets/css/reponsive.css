@@ -262,6 +262,10 @@
     margin-right: -5%;
   }
 
+  .animation-mobile {
+    padding: 8px 12px;
+  }
+
   .section-reverse .section-main {
     flex-flow: row-reverse;
   }
