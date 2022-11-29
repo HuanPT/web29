@@ -2,6 +2,10 @@
   .header-top-wrap .header-top-logo .logo-txt {
     display: none;
   }
+
+  .login-container .header-top-logo .logo-txt {
+    display: block;
+  }
 }
 
 @media screen and (min-width: 550px) {
@@ -19,7 +23,7 @@
     margin-right: 24px;
   }
 
-  .language-select #language {
+  .language-select .language {
     padding: 8px 24px;
   }
 
@@ -67,7 +71,7 @@
     padding: 0 10%;
   }
 
-  .email-form-input {
+  .form-input {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -130,6 +134,43 @@
   .frequently-ask-question .faq-list .faq-question {
     padding: 16px 44px 16px 24px;
   }
+
+  /* Login Form */
+  .form-input .wrap-form .input_id {
+    max-width: 100%;
+  }
+
+  .login-footer .section-wrap {
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .login-footer .section-wrap .footer-main {
+    padding: 30px 0 20px;
+  }
+}
+
+@media screen and (min-width: 740px) {
+  .login-container {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .login-container .login-content {
+    min-height: 660px;
+    margin-bottom: 90px;
+    padding: 60px 68px 40px;
+  }
+
+  .login-container .login-form {
+    padding: 0;
+    max-width: 460px;
+    min-height: 100vh;
+  }
+
+  /* Footer Login */
+  .login-footer {
+    border: none;
+  }
 }
 
 @media screen and (min-width: 950px) {
@@ -159,7 +200,7 @@
     margin-right: 32px;
   }
 
-  .language-select #language {
+  .language-select .language {
     font-size: 1.6rem;
   }
 
@@ -186,7 +227,7 @@
     padding-top: 14px;
   }
 
-  .email-form-input {
+  .form-input {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -211,18 +252,18 @@
     padding: 0 5% 20px;
   }
 
-  .email-form-input .btn {
+  .form-input .btn {
     margin: 0;
     font-size: 2.4rem;
     padding: 12px 30px;
     margin-bottom: 10px;
   }
 
-  .placeLabel {
+  .place {
     font-size: 1.6rem;
   }
 
-  .email-form-input .input-tag:focus + .placeLabel {
+  .form-input .input-tag:focus + .place {
     font-size: 13px;
     font-weight: 500;
     top: 6px;
@@ -318,6 +359,28 @@
   .frequently-ask-question .faq-list .faq-question {
     padding: 20px 56px 20px 32px;
   }
+
+  /* Form login */
+  .login-container .header-top-logo .logo-txt {
+    font-size: 2.6rem;
+  }
+
+  .login-container .header-top-logo {
+    height: 70px;
+  }
+
+  .login-container .header-top-logo img {
+    height: 70px;
+  }
+
+  /* Login Form */
+  .login-form .form-input {
+    flex-direction: column;
+  }
+
+  .login-form .form-input .input_id {
+    height: 50px;
+  }
 }
 
 @media screen and (min-width: 1450px) {
@@ -342,7 +405,7 @@
     font-size: 2.6rem;
   }
 
-  .language-select #language {
+  .language-select .language {
     font-size: 1.7rem;
   }
 
@@ -367,5 +430,17 @@
 
   .email-form .btn {
     padding: 17px 44px;
+  }
+
+  /* Login Form */
+  .form-input .wrap-form .input_id {
+    width: 100%;
+  }
+
+  .login-container .login-form {
+    padding: 0;
+    max-width: 460px;
+    min-height: 100vh;
+    margin: 0 auto -300px;
   }
 }
