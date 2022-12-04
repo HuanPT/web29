@@ -239,12 +239,25 @@ a:hover {
   font-size: 1.8rem;
 }
 
+.email-form .form-input .wrap-form {
+  width: 100%;
+  margin: 10px 0;
+  max-width: 500px;
+}
+
+.email-form .input-error {
+  display: none;
+  color: #ffa00a;
+  text-align: left;
+  padding: 6px 3px;
+  font-size: 1.5rem;
+}
+
 .form-input {
   position: relative;
 }
 
 .input_id {
-  margin: 10px 0;
   width: 100%;
   position: relative;
 }
@@ -273,9 +286,10 @@ a:hover {
   /* transition: font 0.1s ease, top 0.1s ease, transform 0.1s ease; */
 }
 
+.has-txt + .place,
 .form-input .input-tag:focus + .place {
   font-size: 1.1rem;
-  top: 4px;
+  top: 5px;
   transform: translateY(0);
 }
 
@@ -626,16 +640,12 @@ a:hover {
   background: #454545;
 }
 
-.login-form .input-tag:focus + .place {
-  top: 5px;
-}
-
 .login-form .input_id {
   margin: 0 auto;
 }
 
 .login-form .input-error {
-  display: block;
+  display: none;
   color: #e87c03;
   padding: 6px 3px;
   font-size: 1.3rem;
@@ -652,7 +662,7 @@ a:hover {
 }
 
 .login-form .wrap-form::after {
-  display: block;
+  display: var(--afterNone, none);
   content: "";
   left: 0;
   bottom: 0;
