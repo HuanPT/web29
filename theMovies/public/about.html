@@ -6,17 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <!-- Style css -->
     <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/main.css">
     <link rel="stylesheet" href="./assets/css/reponsive.css">
 
     <!-- Link Test Css -->
     <link rel="stylesheet" href="./assets/css/test.css">
+    <link rel="stylesheet" href="./assets/css/about.css">
 
     <!-- Font awesome css -->
     <link rel="stylesheet" href="./lib/fontawesome/css/all.min.css">
+
+
 </head>
 
 <body>
@@ -29,10 +30,12 @@
                         <div class="col-12">
                             <div class="header-top-wrap">
                                 <div class="header-top-logo">
-                                    <img src="./assets/img/movieLogo.png" alt="logo">
-                                    <div class="logo-txt">
-                                        theMovies
-                                    </div>
+                                    <a href="/">
+                                        <img src="./assets/img/movieLogo.png" alt="logo">
+                                        <div class="logo-txt">
+                                            TheMovies
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="language-select">
                                     <label for="google_translate_element">
@@ -50,44 +53,50 @@
             </div>
         </div>
     </nav>
-    <!-- Main section -->
-    <div class="main">
-        <header class="heading">
-            <div class="h1">
-                movies
-            </div>
 
-            <p class="info">
-                movies move us like nothing else can, whether they're scary, funny, dramatic, romantic or anywhere
-                in-between. so many titles, so much to experience.
+    <!-- Movie Info -->
+    <div class="movie-info">
+        <div class="movie-detail">
+            <h1 class="movie-name"></h1>
+            <p class="genres"></p>
+            <p class="desc"></p>
+            <p class="starring">
+                <span>Starring: </span>
+
             </p>
-
-            <!-- Movie list -->
-            <!-- <div class="movie-list">
-                <button class="pre-btn">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </button>
-
-                <div class="h1 movie-category">
-                    popular movie
-                </div>
-                <div class="movie-container">
-                    <div class="movie">
-                        <img src="https://hiepsibaotap.com/wp-content/uploads/2022/07/bleach2.jpg" alt="">
-                        <p class="movie-title">movie name</p>
-                    </div>
-                </div>
-                <button class="nxt-btn">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </button>
-            </div> -->
-        </header>
+        </div>
     </div>
+
+    <!-- Video clips -->
+    <div class="trailer-container">
+        <div class="h1">
+            Video Clips
+        </div>
+        <div class="wrap-iframes">
+
+        </div>
+        <!-- <iframe src="" title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe> -->
+    </div>
+
+    <!-- Recommendations -->
+    <div class="recommendations">
+        <div class="h1">More like this</div>
+        <div class="recommendations-container">
+            <!-- <div class="movie">
+                <img src="https://hiepsibaotap.com/wp-content/uploads/2022/07/bleach2.jpg" alt="">
+                <p class="movie-title">movie name</p>
+            </div> -->
+        </div>
+    </div>
+
+    
 
 
     <script src="./assets/js/api.js"></script>
-    <script src="./assets/js/scroll.js"></script>
-    <script src="./assets/js/home.js"></script>
+    <script src="./assets/js/about.js"></script>
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({

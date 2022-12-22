@@ -17,17 +17,17 @@ body::-webkit-scrollbar {
 
 .register-form::-webkit-scrollbar-track,
 body::-webkit-scrollbar-track {
-  background: #ccc;
+  background: #181818;
   /* Màu nền ngoài của thanh scrollbar */
 }
 
 .register-form::-webkit-scrollbar-thumb,
 body::-webkit-scrollbar-thumb {
-  background: linear-gradient(#ccc 0%, #ffbf00 100%);
+  background: linear-gradient(#181818 0%, #ffbf00 100%);
   /* Màu của thanh cuộn (scroll thumb) */
   border-radius: 5px;
   /* Bo góc scroll thumb */
-  border: 2px solid #ccc;
+  border: 2px solid #181818;
   /* Không hỗ trợ padding, margin, transition nên dùng viền cùng màu nên để padding scroll thumb */
 }
 
@@ -63,7 +63,7 @@ html {
 
 .container-fluid {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1440px;
 }
 
 .pad-lr-16 {
@@ -196,6 +196,61 @@ a:hover {
       transparent 75%,
       rgba(0, 0, 0, 0.8));
   border-bottom: 8px solid #222;
+}
+
+/* animation bgr */
+.wrap {
+  perspective: 2000px;
+  perspective-origin: -235px 840px;
+  overflow: hidden;
+  position: absolute;
+  inset: 0;
+}
+
+.view3d {
+  transform-style: preserve-3d;
+  position: absolute;
+  top: -70px;
+  left: -310px;
+  transform: scale(1.08);
+}
+
+.rotate {
+  position: absolute;
+  transform: rotateY(320deg)rotate(20deg);
+}
+
+.wrap-animation {
+  width: 1760px;
+  height: 950px;
+  overflow: hidden;
+}
+
+.animation {
+  animation: tranX 60s linear infinite;
+}
+
+.grid-wrapper {
+  width: -moz-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+}
+
+.grid-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes tranX {
+  0% {
+    transform: translate(0);
+  }
+
+  100% {
+    transform: translate(-1760px);
+  }
 }
 
 /* Section background */
