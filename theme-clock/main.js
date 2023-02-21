@@ -119,7 +119,6 @@ function setDate() {
 
   const span = document.createElement("span");
   span.className = "date circle";
-  console.log(span);
   span.innerText = date;
 
   dateNew.appendChild(span);

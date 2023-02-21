@@ -41,6 +41,7 @@ img {
 .pad-20-10 {
   padding: 20px 10px;
 }
+
 /* =========== Header ============ */
 .navbar {
   position: fixed;
@@ -68,8 +69,7 @@ img {
   margin-top: -5px;
 }
 
-.navbar-logo {
-}
+.navbar-logo {}
 
 .logo img {
   height: 50px;
@@ -234,8 +234,7 @@ img {
   padding-bottom: 64px;
 }
 
-.episode {
-}
+.episode {}
 
 .title-set h1 {
   color: #333;
@@ -313,16 +312,16 @@ img {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
 .description-info {
   display: flex;
   font-size: 12px;
   justify-content: space-between;
 }
-.info-name {
-}
 
-.info-view {
-}
+.info-name {}
+
+.info-view {}
 
 .button-play {
   top: 10px;
@@ -347,11 +346,9 @@ img {
 }
 
 /* ========= News Content ========= */
-.news-content {
-}
+.news-content {}
 
-.news-list {
-}
+.news-list {}
 
 .news-item {
   height: 62px;
@@ -374,6 +371,11 @@ img {
   font-size: 14px;
   line-height: 20px;
   max-height: 60px;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 /* ============ License Content ============= */
@@ -458,51 +460,39 @@ img {
 }
 
 .bg1 {
-  background: linear-gradient(
-    180deg,
-    rgba(244, 67, 54, 0.9),
-    rgba(244, 67, 54, 0.2)
-  );
+  background: linear-gradient(180deg,
+      rgba(244, 67, 54, 0.9),
+      rgba(244, 67, 54, 0.2));
 }
 
 .bg2 {
-  background: linear-gradient(
-    -180deg,
-    rgba(156, 39, 176, 0.9),
-    rgba(156, 39, 176, 0.2)
-  );
+  background: linear-gradient(-180deg,
+      rgba(156, 39, 176, 0.9),
+      rgba(156, 39, 176, 0.2));
 }
 
 .bg3 {
-  background: linear-gradient(
-    -180deg,
-    rgba(63, 81, 181, 0.9),
-    rgba(63, 81, 181, 0.2)
-  );
+  background: linear-gradient(-180deg,
+      rgba(63, 81, 181, 0.9),
+      rgba(63, 81, 181, 0.2));
 }
 
 .bg4 {
-  background: linear-gradient(
-    -180deg,
-    rgba(0, 150, 136, 0.9),
-    rgba(0, 150, 136, 0.2)
-  );
+  background: linear-gradient(-180deg,
+      rgba(0, 150, 136, 0.9),
+      rgba(0, 150, 136, 0.2));
 }
 
 .bg5 {
-  background: linear-gradient(
-    -180deg,
-    rgba(255, 193, 7, 0.9),
-    rgba(255, 193, 7, 0.2)
-  );
+  background: linear-gradient(-180deg,
+      rgba(255, 193, 7, 0.9),
+      rgba(255, 193, 7, 0.2));
 }
 
 .bg6 {
-  background: linear-gradient(
-    -180deg,
-    rgba(140, 106, 73, 0.9),
-    rgba(140, 106, 73, 0.2)
-  );
+  background: linear-gradient(-180deg,
+      rgba(140, 106, 73, 0.9),
+      rgba(140, 106, 73, 0.2));
 }
 
 .rank-title {
