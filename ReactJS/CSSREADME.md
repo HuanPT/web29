@@ -4,46 +4,59 @@ _Trong React, CSS được sử dụng để tạo kiểu cho các thành phần
 
 ## **CSS in JSX**
 
-_CSS in JSX là một cách để sử dụng CSS trong các ứng dụng React bằng cách sử dụng các đối tượng JSX. Thay vì sử dụng một tệp CSS riêng biệt, các kiểu CSS được khai báo trực tiếp trong các thành phần React bằng cách sử dụng các đối tượng JSX._
+_CSS in JSX là một cách để viết CSS trong React, cho phép viết CSS trong cùng một file với code JavaScript. Khi sử dụng Styled JSX, các quy tắc CSS được viết bên trong các template literals trong các component React._
 
 #### **Cú pháp**
 
-_Để sử dụng CSS in JSX, chúng ta có thể khai báo kiểu trong các thành phần React bằng cách sử dụng cú pháp của JSX. Sau đó, ta có thể sử dụng các kiểu này trong React bằng cách truyền vào thuộc tính className hoặc style của thành phần._
+_Css in JSX cung cấp các cú pháp tương tự như CSS thông thường, cho phép bạn sử dụng các thuộc tính CSS, các lớp và nhóm class, các điều kiện và các biến. Có thể sử dụng Styled JSX trong các file .js hoặc .jsx, và các CSS rules sẽ được áp dụng trực tiếp vào các elements mà nó được gọi._
 
 ### `Cú pháp khai và sử dụng trong React`
 
 ```
-import React from 'react';
-import './styles.css';
+import React from 'react'
 
-function MyComponent() {
-  return (
-    <div className="my-class">
-      <p className="my-class__paragraph">Hello World</p>
-    </div>
-  );
-}
+const Button = ({ children }) => (
+  <button>
+    {children}
+    <style jsx>{`
+      button {
+        background-color: blue;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
 
-export default MyComponent;
+      button:hover {
+        background-color: navy;
+      }
+    `}</style>
+  </button>
+)
+
+export default Button
 ```
-_Trong ví dụ trên, chúng ta đã khai báo hai kiểu CSS my-class và my-class\_\_paragraph trong tệp styles.css. Các kiểu này được sử dụng trong thành phần MyComponent bằng cách truyền vào thuộc tính className của các thành phần div và p._
+
+_Trong ví dụ trên, chúng ta sử dụng Styled JSX để style cho component Button. CSS rules được viết bên trong template literals và được đặt trong một phần tử style jsx Khi component này được render, các rules này sẽ được áp dụng vào phần tử button_
 
 #### **Ưu điểm của CSS in JSX:**
 
-- Được tích hợp trực tiếp vào thành phần React, giúp dễ dàng quản lý và triển khai kiểu cho các thành phần của ứng dụng.
-- Linh hoạt hơn trong việc quản lý kiểu trong ứng dụng.
-- Cung cấp cách tiếp cận trực quan hơn trong việc điều chỉnh kiểu cho các thành phần.
-- Giảm số lượng các tệp CSS và các lệnh CSS inline trong mã nguồn của ứng dụng.
+- Scoped styling: Styled JSX cho phép định nghĩa styles cho từng component riêng biệt, giúp tránh việc ghi đè styles giữa các component khác nhau.
+- Có thể sử dụng các biểu thức JavaScript: Bạn có thể sử dụng các biểu thức JavaScript bên trong Styled JSX để tính toán các giá trị style, như kích thước font, margin, padding, ...
+- Tích hợp tốt với React: Vì Styled JSX được thiết kế đặc biệt cho React, nên nó tích hợp tốt với các tính năng của React như props, state, lifecycle methods,...
+- Tích hợp với các công cụ developer: Styled JSX tích hợp tốt với các công cụ developer như React DevTools, giúp cho việc debug và phát triển các component trở nên dễ dàng hơn.
 
 #### **Nhược điểm của CSS in JSX:**
 
-- Không giải quyết được vấn đề xung đột kiểu giữa các thành phần.
-- Không hỗ trợ tái sử dụng các kiểu CSS giữa các thành phần.
+- Phần mở rộng cú pháp: Styled JSX sử dụng phần mở rộng cú pháp riêng để viết CSS, điều này có thể gây khó khăn cho các developer mới.
+- Không thể sử dụng các thư viện CSS bên ngoài: Styled JSX chỉ hỗ trợ viết CSS bên trong các template literals của JavaScript, không thể sử dụng các thư viện CSS bên ngoài.
+- Tăng kích thước file: Khi sử dụng Styled JSX, CSS sẽ được inlined vào trong file JavaScript, dẫn đến tăng kích thước file. Tuy nhiên, điều này có thể giảm thiểu bằng cách sử dụng công cụ như Babel để tách CSS thành các file riêng biệt.
 
 #### **Một số thư viện liên quan đến CSS in JSX:**
- 1. [styled-components:](https://styled-components.com/) Thư viện CSS in JSX phổ biến nhất, cho phép định nghĩa kiểu CSS trong các thành phần React.
- 2. [emotion:](https://emotion.sh/docs/introduction) Thư viện CSS in JSX khác, cũng cung cấp các tính năng giống như styled-components.
- 3. [JSS:](https://cssinjs.org/?v=v10.10.0) Thư viện CSS in JSX tương tự, cho phép định nghĩa kiểu CSS bằng cách sử dụng các đối tượng Javascript.
+
+1.  [styled-components:](https://styled-components.com/) Thư viện CSS in JSX phổ biến nhất, cho phép định nghĩa kiểu CSS trong các thành phần React.
+2.  [emotion:](https://emotion.sh/docs/introduction) Thư viện CSS in JSX khác, cũng cung cấp các tính năng giống như styled-components.
+3.  [JSS:](https://cssinjs.org/?v=v10.10.0) Thư viện CSS in JSX tương tự, cho phép định nghĩa kiểu CSS bằng cách sử dụng các đối tượng Javascript.
 
 ## **CSS Module**
 
@@ -91,6 +104,7 @@ export default MyComponent;
 - Trong một số trường hợp, việc sử dụng CSS Module có thể làm cho các kiểu của bạn khó hiểu hơn. Ví dụ, nếu bạn đặt quá nhiều tên lớp CSS khác nhau cho các thành phần của mình, điều này có thể làm cho mã nguồn trở nên rối và khó hiểu.
 
 #### **Một số thư viện liên quan đến CSS Module:**
+
 1. [css-loader:](https://github.com/webpack-contrib/css-loader) Thư viện Webpack cho phép tải và sử dụng các tệp CSS Module trong ứng dụng.
 2. [classnames](https://www.npmjs.com/package/classnames) Thư viện giúp tạo ra các lớp CSS Module dễ dàng hơn bằng cách kết hợp nhiều lớp thành một chuỗi.
 3. [react-css-modules:](https://github.com/gajus/react-css-modules) Thư viện cung cấp một cách tiếp cận khác để sử dụng CSS Module trong các thành phần React.
